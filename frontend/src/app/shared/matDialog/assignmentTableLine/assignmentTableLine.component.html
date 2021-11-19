@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>New Assignment</h1>
+<div mat-dialog-content class="dialog">
+  <div>
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput [(ngModel)]="data.title" />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field id="description-text-area">
+      <mat-label>Description</mat-label>
+      <textarea rows="3" matInput [(ngModel)]="data.description"></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button
+    mat-button
+    [mat-dialog-close]="{
+      title: data.title,
+      description: data.description,
+      lastUpdate: data.lastUpdate
+    }"
+    cdkFocusInitial
+  >
+    Ok
+  </button>
+</div>

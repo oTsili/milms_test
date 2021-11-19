@@ -1,0 +1,11 @@
+<mat-tab-group
+  mat-align-tabs="center"
+  *ngIf="userRole === 'instructor' || userRole === 'admin'"
+>
+  <mat-tab label="User Events" color="primary"
+    ><app-event [BACKEND_URL]="'/api/courses'"></app-event>
+  </mat-tab>
+  <mat-tab label="Course Events" color="primary">
+    <app-event [BACKEND_URL]="'/api/users'"></app-event>
+  </mat-tab>
+</mat-tab-group>

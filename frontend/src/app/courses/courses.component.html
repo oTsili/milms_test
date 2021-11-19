@@ -1,0 +1,4 @@
+<app-instructor-courses
+  *ngIf="userRole === 'instructor' || userRole === 'admin'"
+></app-instructor-courses>
+<app-student-courses *ngIf="userRole === 'student'"></app-student-courses>
